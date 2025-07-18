@@ -1,0 +1,83 @@
+html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none; /* Allows clicks to pass through canvas */
+    }
+
+    .navbar {
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-link, .navbar-brand {
+      color: #fff !important;
+    }
+
+    .nav-link:hover {
+      color: #ffc107 !important;
+    }
+
+    .section {
+      z-index: 5;
+      position: relative;
+      padding: 80px 20px;
+      background: transparent;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .glass-box {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      color: white;
+    }
+
+    .section h2 {
+      color: #ffc107;
+      margin-bottom: 30px;
+    }
+
+    .btn-custom {
+      margin: 5px;
+    }
+
+    .tokenomics-table th, .tokenomics-table td {
+      color: white;
+    }
+
+    .faq h5 {
+      color: #0dcaf0;
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
