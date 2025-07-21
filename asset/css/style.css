@@ -89,7 +89,7 @@ html, body {
 
 .section{
   height: max-content;
-  border:2px solid #ffc107;
+  /* border:2px solid #ffc107; */
 }
 
 .spacer {
