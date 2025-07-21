@@ -10,6 +10,7 @@ html, body {
       background-color: #111;
       color: white;
       overflow-x: hidden;
+      overflow-y: auto !important;
     }
 
     canvas {
@@ -88,7 +89,7 @@ html, body {
 
 .section{
   height: 100vh;
-  border:2px solid #ffc107;
+  /* border:2px solid #ffc107; */
 }
 
 .spacer {
