@@ -90,3 +90,7 @@ html, body {
   height: 100vh;
   border:2px solid #ffc107;
 }
+
+.spacer {
+  height: 50px; /* Adjust height as needed */
+}

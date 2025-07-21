@@ -1,4 +1,4 @@
-
+/*
 const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
@@ -77,114 +77,114 @@ const canvas = document.getElementById("canvas");
     });
 
     animate();
-	
+	*/
 
-	// const canvas = document.getElementById("canvas");
-  // const ctx = canvas.getContext("2d");
-  // canvas.width = window.innerWidth;
-  // canvas.height = window.innerHeight;
+	const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-  // const blobs = [], sparkles = [];
+  const blobs = [], sparkles = [];
 
-  // // Load your logo image
-  // const logoImage = new Image();
-  // logoImage.src = "asset/img/floppy23wweeimg.jpg"; // Place logo.png in the same folder
+  // Load your logo image
+  const logoImage = new Image();
+  logoImage.src = "asset/img/floppy23wweeimg.jpg"; // Place logo.png in the same folder
 
-  // class Blob {
-  //   constructor() {
-  //     this.x = Math.random() * canvas.width;
-  //     this.y = Math.random() * canvas.height;
-  //     this.radius = 60 + Math.random() * 60;
-  //     this.vx = (Math.random() - 0.5) * 0.8;
-  //     this.vy = (Math.random() - 0.5) * 0.8;
-  //     this.alpha = 0.5 + Math.random() * 0.3;
-  //   }
+  class Blob {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.radius = 60 + Math.random() * 60;
+      this.vx = (Math.random() - 0.5) * 0.8;
+      this.vy = (Math.random() - 0.5) * 0.8;
+      this.alpha = 0.5 + Math.random() * 0.3;
+    }
 
-  //   update() {
-  //     this.x += this.vx;
-  //     this.y += this.vy;
-  //     if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-  //     if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-  //   }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+    }
 
-  //   draw() {
-  //     if (logoImage.complete && logoImage.naturalWidth > 0) {
-  //       ctx.save();
-  //       ctx.globalAlpha = this.alpha;
-  //       ctx.beginPath();
-  //       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-  //       ctx.closePath();
-  //       ctx.clip();
+    draw() {
+      if (logoImage.complete && logoImage.naturalWidth > 0) {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
 
-  //       ctx.drawImage(
-  //         logoImage,
-  //         this.x - this.radius,
-  //         this.y - this.radius,
-  //         this.radius * 2,
-  //         this.radius * 2
-  //       );
+        ctx.drawImage(
+          logoImage,
+          this.x - this.radius,
+          this.y - this.radius,
+          this.radius * 2,
+          this.radius * 2
+        );
 
-  //       ctx.restore();
-  //     }
-  //   }
-  // }
+        ctx.restore();
+      }
+    }
+  }
 
-  // class Sparkle {
-  //   constructor(x, y) {
-  //     this.x = x;
-  //     this.y = y;
-  //     this.radius = 3 + Math.random() * 5;
-  //     this.vx = (Math.random() - 0.5) * 5;
-  //     this.vy = (Math.random() - 0.5) * 5;
-  //     this.alpha = 1;
-  //   }
+  class Sparkle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.radius = 3 + Math.random() * 5;
+      this.vx = (Math.random() - 0.5) * 5;
+      this.vy = (Math.random() - 0.5) * 5;
+      this.alpha = 1;
+    }
 
-  //   update() {
-  //     this.x += this.vx;
-  //     this.y += this.vy;
-  //     this.alpha -= 0.02;
-  //   }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      this.alpha -= 0.02;
+    }
 
-  //   draw() {
-  //     ctx.beginPath();
-  //     ctx.fillStyle = `hsla(${Math.random() * 360}, 100%, 70%, ${this.alpha})`;
-  //     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-  //     ctx.fill();
-  //   }
-  // }
+    draw() {
+      ctx.beginPath();
+      ctx.fillStyle = `hsla(${Math.random() * 360}, 100%, 70%, ${this.alpha})`;
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
 
-  // function animate() {
-  //   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  //   blobs.forEach(blob => {
-  //     blob.update();
-  //     blob.draw();
-  //   });
+    blobs.forEach(blob => {
+      blob.update();
+      blob.draw();
+    });
 
-  //   sparkles.forEach((sparkle, index) => {
-  //     sparkle.update();
-  //     sparkle.draw();
-  //     if (sparkle.alpha <= 0) sparkles.splice(index, 1);
-  //   });
+    sparkles.forEach((sparkle, index) => {
+      sparkle.update();
+      sparkle.draw();
+      if (sparkle.alpha <= 0) sparkles.splice(index, 1);
+    });
 
-  //   requestAnimationFrame(animate);
-  // }
+    requestAnimationFrame(animate);
+  }
 
-  // // Create initial blobs
-  // for (let i = 0; i < 10; i++) blobs.push(new Blob());
+  // Create initial blobs
+  for (let i = 0; i < 10; i++) blobs.push(new Blob());
 
-  // // Sparkle on click
-  // document.addEventListener("click", e => {
-  //   const x = e.clientX;
-  //   const y = e.clientY;
-  //   for (let i = 0; i < 20; i++) sparkles.push(new Sparkle(x, y));
-  // });
+  // Sparkle on click
+  document.addEventListener("click", e => {
+    const x = e.clientX;
+    const y = e.clientY;
+    for (let i = 0; i < 20; i++) sparkles.push(new Sparkle(x, y));
+  });
 
-  // // Resize canvas
-  // window.addEventListener("resize", () => {
-  //   canvas.width = window.innerWidth;
-  //   canvas.height = window.innerHeight;
-  // });
+  // Resize canvas
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
 
-  // animate();
+  animate();
   
