@@ -88,8 +88,8 @@ html, body {
     }
 
 .section{
-  height: 100vh;
-  /* border:2px solid #ffc107; */
+  height: max-content;
+  border:2px solid #ffc107;
 }
 
 .spacer {
