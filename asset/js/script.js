@@ -88,7 +88,7 @@ const canvas = document.getElementById("canvas");
 
   // Load your logo image
   const logoImage = new Image();
-  logoImage.src = "asset/img/floppy23wweeimg.jpg"; // Place logo.png in the same folder
+  logoImage.src = "asset/img/floppy23wweeimg.jpg"; 
 
   class Blob {
     constructor() {
