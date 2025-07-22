@@ -198,3 +198,16 @@ html, body {
   object-fit: cover; /* crop and fill without distortion */
   border-radius: 8px;
 }
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .video-wrapper {
+    padding-top: 75%; /* Adjust for smaller screens if needed */
+  }
+
+  #hero .glass-box .btn{
+    width: 100%;
+    margin: 10px 0;
+  }
+}
